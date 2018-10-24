@@ -1,11 +1,11 @@
-
-
 " Cancel compatibility with Vi
 set nocompatible
 
 " Activate pathogen
 call pathogen#infect()
 
+syntax on 
+colorscheme molokai
 
 " -- Display
 set title		" Update title of window in term
@@ -50,14 +50,7 @@ highlight Comment cterm=italic
 highlight htmlARG cterm=italic
 
 " Set relevant filetypes
-autocmd BufRead,BufNewFile *.js set filetype=javascript
-autocmd FileType crontab setlocal nowritebackup
-autocmd FileType crontab setlocal backupcopy=yes
-
-" Don't offer to pen certain files/directories
-set wildignore+=node_modules/*
-
-syntax on
+autocmd BufRead,BufNewFile *.js set filetype=javascript autocmd FileType crontab setlocal nowritebackup autocmd FileType crontab setlocal backupcopy=yes " Don't offer to pen certain files/directories set wildignore+=node_modules/* 
 
 
 " -- Font
@@ -78,4 +71,7 @@ autocmd vimenter * NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
 
-" cronjob testing 7.10.'18
+" -- Movement
+" move to beginning/end of line
+nnoremap B ^
+nnoremap E $

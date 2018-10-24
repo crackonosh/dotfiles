@@ -76,8 +76,6 @@ plugins=(
   zsh-brew-services
   brew
   hacker-quotes
-  vim-javascript
-  vim-jsx
 )
 source $ZSH/oh-my-zsh.sh
 
