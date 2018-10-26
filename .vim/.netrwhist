@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/lukashais/Projects/shoplist/shoplist'
+let g:netrw_dirhist_2='/Users/lukashais/Projects/shoplist'
+let g:netrw_dirhist_3='/Users/lukashais/Projects'
+let g:netrw_dirhist_4='/Users/lukashais'
