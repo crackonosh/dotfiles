@@ -105,9 +105,6 @@ alt - down : chunkc tiling::window --focus south
 alt - up : chunkc tiling::window --focus north
 alt - right : chunkc tiling::window --focus east
 
-cmd - j : chunkc tiling::window --focus prev
-cmd - k : chunkc tiling::window --focus next
-
 # equalize size of windows
 shift + alt - 0 : chunkc tiling::desktop --equalize
 
@@ -262,6 +259,4 @@ ctrl + alt - d : chunkc tiling::desktop --layout float
 
 ctrl + alt - w : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/dev_1
 
-
-# CUSTOM SHIT ADDED -- WILL HAVE TO LOOK AT LATER
 
