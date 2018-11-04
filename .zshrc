@@ -4,6 +4,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/lukashais/.oh-my-zsh"
 
+export PATH="/usr/local/sbin:$PATH"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -60,12 +61,10 @@ ZSH_THEME="bira"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  catimg
   last-working-dir
   npm
   osx
   pip
-  pod
   python
   sudo
   web-search
@@ -75,7 +74,11 @@ plugins=(
   zsh-better-npm-completion
   zsh-brew-services
   brew
-  hacker-quotes
+  command-not-found
+  colorize
+  cp
+  jump
+  thefuck
 )
 source $ZSH/oh-my-zsh.sh
 
@@ -112,3 +115,6 @@ alias cmusplaying="bash cmus-nowplaying.sh"
 alias gc='git clone'
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron"
 alias rnri="react-native run-ios"
+alias fb-messenger-cli="~/node_modules/fb-messenger-cli/cli.js"
+alias cat="ccat"
+alias cp="cpv --progress -hhh"
