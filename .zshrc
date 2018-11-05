@@ -61,20 +61,13 @@ ZSH_THEME="bira"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  last-working-dir
   npm
   osx
-  pip
-  python
-  sudo
   web-search
   zsh-256color
   colored-man-pages
   you-should-use
   zsh-better-npm-completion
-  zsh-brew-services
-  brew
-  command-not-found
   colorize
   cp
   jump
@@ -118,3 +111,5 @@ alias rnri="react-native run-ios"
 alias fb-messenger-cli="~/node_modules/fb-messenger-cli/cli.js"
 alias cat="ccat"
 alias cp="cpv --progress -hhh"
+alias sptab="split_tab"
+alias vsptab="vsplit_tab"
