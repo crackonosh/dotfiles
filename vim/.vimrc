@@ -5,7 +5,7 @@ set nocompatible
 call pathogen#infect()
 
 syntax on 
-colorscheme molokai
+colorscheme molokai-samuraj
 
 " -- Display
 set title		" Update title of window in term
