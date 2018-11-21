@@ -1,9 +1,9 @@
 ## VIM
 ##### Files
-1. autoload/ - pathogen
-2. bundle/ - plugins
-3. colors/ - color theme
-4. .vimrc
+1. vim/autoload/ - pathogen
+2. vim/bundle/ - plugins
+3. vim/colors/ - color theme
+4. vim/init.vim - vimrc fo neovim
 
 ## ZSH
 ##### Files
@@ -24,3 +24,7 @@
 
 ## Fonts 
 1. Fira Code - everywhere used custom font
+
+## iTerm2
+1. tadome.itermcolors - custom color scheme
+

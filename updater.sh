@@ -1,6 +1,3 @@
 #!/bin/sh
-yes | command cp -r ~/.vimrc ~/.zshrc ~/.config/neofetch ~/.vim/autoload ~/.vim/bundle ~/.vim/colors ~/dotfiles/
-git pull
-git add .
-git commit -m "Dotfiles sync"
-git push
+yes | command cp -r ~/.config/nvim/colors ~/.config/nvim/bundle ~/.config/nvim/autoload ~/.config/nvim/init.vim ~/dotfiles/vim
+yes | command cp -r ~/.chunkwmrc ~/.skhdrc ~/.zshrc ~/.config/neofetch ~/dotfiles

@@ -54,6 +54,7 @@ autocmd FileType crontab setlocal nowritebackup
 autocmd FileType crontab setlocal backupcopy=yes " Don't offer to pen certain files/directories
 set wildignore+=node_modules/* 
 autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufRead,BufNewFile *.MD set filetype=markdown
 
 
 " ignore certain files and/or directories
@@ -64,7 +65,6 @@ set wildignore+=node_modules/*
 if has("gui_running")
   set macligatures
 endif
-set guifont=Fira\ Code:h14
 
 
 " NERDTree
