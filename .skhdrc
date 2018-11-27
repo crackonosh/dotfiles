@@ -87,9 +87,6 @@
 # open qutebrowser
 cmd + shift - return : ~/Scripts/qtb.sh
 
-# open mpv
-cmd - m : open -na /Applications/mpv.app $(pbpaste)
-
 # close focused window
 alt - w : chunkc tiling::window --close
 
@@ -98,47 +95,23 @@ alt - h : chunkc tiling::window --focus west
 alt - j : chunkc tiling::window --focus south
 alt - k : chunkc tiling::window --focus north
 alt - l : chunkc tiling::window --focus east
-alt - left : chunkc tiling::window --focus west
-alt - down : chunkc tiling::window --focus south
-alt - up : chunkc tiling::window --focus north
-alt - right : chunkc tiling::window --focus east
 
 # equalize size of windows
-shift + alt - 0 : chunkc tiling::desktop --equalize
+shift + alt - return : chunkc tiling::desktop --equalize
 
 # swap window
 shift + alt - h : chunkc tiling::window --swap west
 shift + alt - j : chunkc tiling::window --swap south
 shift + alt - k : chunkc tiling::window --swap north
 shift + alt - l : chunkc tiling::window --swap east
-shift + alt - left : chunkc tiling::window --swap west
-shift + alt - down : chunkc tiling::window --swap south
-shift + alt - up : chunkc tiling::window --swap north
-shift + alt - right : chunkc tiling::window --swap east
 
 # move window
 shift + cmd - h : chunkc tiling::window --warp west
 shift + cmd - j : chunkc tiling::window --warp south
 shift + cmd - k : chunkc tiling::window --warp north
 shift + cmd - l : chunkc tiling::window --warp east
-shift + cmd - left : chunkc tiling::window --warp west
-shift + cmd - down : chunkc tiling::window --warp south
-shift + cmd - up : chunkc tiling::window --warp north
-shift + cmd - right : chunkc tiling::window --warp east 
 
 
-# create desktop, move window and follow focus
-shift + cmd - n : chunkc tiling::desktop --create;\
-                  id=$(chunkc tiling::query --desktops-for-monitor $(chunkc tiling::query --monitor-for-desktop $(chunkc tiling::query --desktop id)));\
-                  chunkc tiling::window --send-to-desktop $(echo ${id##* });\
-                  chunkc tiling::desktop --focus $(echo ${id##* })
-
-# create desktop and follow focus
-cmd + alt - n : chunkc tiling::desktop --create;\
-                id=$(chunkc tiling::query --desktops-for-monitor $(chunkc tiling::query --monitor-for-desktop $(chunkc tiling::query --desktop id)));\
-                chunkc tiling::desktop --focus $(echo ${id##* })
-# destroy desktop
-cmd + alt - w : chunkc tiling::desktop --annihilate
 
 # fast focus desktop
 cmd + alt - x : chunkc tiling::desktop --focus $(chunkc get _last_active_desktop)
@@ -235,8 +208,6 @@ alt - d : chunkc tiling::window --toggle parent
 # toggle window split type
 alt - e : chunkc tiling::window --toggle split
 
-# toggle window fade
-alt - q : chunkc tiling::window --toggle fade
 
 # float / unfloat window and center on screen
 alt - t : chunkc tiling::window --toggle float;\
