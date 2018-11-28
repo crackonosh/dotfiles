@@ -114,30 +114,23 @@ shift + cmd - l : chunkc tiling::window --warp east
 
 
 # fast focus desktop
-cmd + alt - x : chunkc tiling::desktop --focus $(chunkc get _last_active_desktop)
 cmd + alt - c : chunkc tiling::desktop --focus next
 cmd + alt - z : chunkc tiling::desktop --focus prev
 ctrl - right : skhd -k "cmd + alt - c" && uberrefresh
 ctrl - left : skhd -k "cmd + alt - z" && uberrefresh
-cmd + alt - 1 : chunkc tiling::desktop --focus 1
-cmd + alt - 2 : chunkc tiling::desktop --focus 2
-cmd + alt - 3 : chunkc tiling::desktop --focus 3
-cmd + alt - 4 : chunkc tiling::desktop --focus 4
-cmd + alt - 5 : chunkc tiling::desktop --focus 5
-cmd + alt - 6 : chunkc tiling::desktop --focus 6
-# cmd + alt - 7 : chunkc tiling::desktop --focus 7
+cmd + shift - 0x12 : chunkc tiling::desktop --focus 1
+cmd + shift - 0x13 : chunkc tiling::desktop --focus 2
+cmd + shift - 0x14 : chunkc tiling::desktop --focus 3
+cmd + shift - 0x15 : chunkc tiling::desktop --focus 4
 
 # send window to desktop
 shift + alt - x : chunkc tiling::window --send-to-desktop $(chunkc get _last_active_desktop)
 shift + ctrl - left : chunkc tiling::window --send-to-desktop prev
 shift + ctrl - right : chunkc tiling::window --send-to-desktop next
-shift + alt - 1 : chunkc tiling::window --send-to-desktop 1
-shift + alt - 2 : chunkc tiling::window --send-to-desktop 2
-shift + alt - 3 : chunkc tiling::window --send-to-desktop 3
-shift + alt - 4 : chunkc tiling::window --send-to-desktop 4
-shift + alt - 5 : chunkc tiling::window --send-to-desktop 5
-shift + alt - 6 : chunkc tiling::window --send-to-desktop 6
-# shift + alt - 7 : chunkc tiling::window --send-to-desktop 7
+shift + ctrl - 0x12 : chunkc tiling::window --send-to-desktop 1
+shift + ctrl - 0x13 : chunkc tiling::window --send-to-desktop 2
+shift + ctrl - 0x14 : chunkc tiling::window --send-to-desktop 3
+shift + ctrl - 0x15 : chunkc tiling::window --send-to-desktop 4
 
 # send window to desktop and follow focus
 shift + cmd - x : chunkc tiling::window --send-to-desktop $(chunkc get _last_active_desktop); chunkc tiling::desktop --focus $(chunkc get _last_active_desktop)
@@ -222,11 +215,6 @@ alt - p : chunkc tiling::window --toggle sticky;\
 
 # float next window to be tiled
 shift + alt - t : chunkc set window_float_next 1
-
-# change layout of desktop
-ctrl + alt - a : chunkc tiling::desktop --layout bsp
-ctrl + alt - s : chunkc tiling::desktop --layout monocle
-ctrl + alt - d : chunkc tiling::desktop --layout float
 
 ctrl + alt - w : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/dev_1
 

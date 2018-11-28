@@ -3,9 +3,9 @@
 1. vim/autoload/ - pathogen
 2. vim/bundle/ - plugins
 3. vim/colors/ - color theme
-4. vim/init.vim - vimrc fo neovim
+4. vim/init.vim - vimrc for neovim
 
-## ZSH
+## Oh-My-Zsh
 ##### Files
 1. .zshrc
 
@@ -22,9 +22,11 @@
 1. .chunkwmrc - has to be +x, custom positioning and padding
 2. .skhdrc - custom keyboard shortcuts
 
-## Fonts 
+## Other
+##### Font
 1. Fira Code - everywhere used custom font
+##### iTerm2
+2. tadome.itermcolors - custom color scheme
 
-## iTerm2
-1. tadome.itermcolors - custom color scheme
-
+## Übersicht
+##### README inside folder
