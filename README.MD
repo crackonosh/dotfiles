@@ -22,6 +22,11 @@
   1. .chunkwmrc - has to be +x, custom positioning and padding
   2. .skhdrc - custom keyboard shortcuts
 
+## VSCode
+##### Files
+  1. vscode/settings.json
+  2. vscode/README.MD
+
 ## Other
 ##### Font
   1. Fira Code - everywhere used custom font
