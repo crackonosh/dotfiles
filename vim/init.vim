@@ -52,7 +52,6 @@ highlight htmlARG cterm=italic
 autocmd BufRead,BufNewFile *.js set filetype=javascript
 autocmd FileType crontab setlocal nowritebackup
 autocmd FileType crontab setlocal backupcopy=yes " Don't offer to pen certain files/directories
-set wildignore+=node_modules/* 
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.MD set filetype=markdown
 
