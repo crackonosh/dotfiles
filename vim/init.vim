@@ -5,7 +5,7 @@ set nocompatible
 call pathogen#infect()
 
 syntax on 
-colorscheme molokai-samuraj
+colorscheme Inanis
 
 " -- Display
 set title		" Update title of window in term
@@ -77,6 +77,10 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+
+" Indent-Guides
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guide_size = 2
 
 " -- Movement
 " move to beginning/end of line
