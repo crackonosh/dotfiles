@@ -24,7 +24,6 @@ set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 set shiftround " Round indent to nearest multiple of 2
-set spell " Spell-check always on
 
 
 " -- Search
