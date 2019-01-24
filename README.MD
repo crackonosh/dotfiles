@@ -31,4 +31,5 @@
 ##### Font
   1. Fira Code - everywhere used custom font
 ##### iTerm2
-  2. tadome.itermcolors - custom color scheme
+  1. macOS/iTermProfile - json profile config for iTerm
+  2. macOS/Inanis.itermcolors - custom color scheme
