@@ -52,7 +52,7 @@ autocmd BufRead,BufNewFile *.js set filetype=javascript
 autocmd FileType crontab setlocal nowritebackup
 autocmd FileType crontab setlocal backupcopy=yes " Don't offer to pen certain files/directories
 autocmd BufRead,BufNewFile *.md set filetype=markdown
-autocmd BufRead,BufNewFile *.MD set filetype=markdown
+autocmd BufRead,BufNewFile *.php set filetype=php
 
 
 " ignore certain files and/or directories
@@ -94,3 +94,5 @@ set hidden " Hide file instead of abandoning when switching to another buffer
 set showmode " Show the current mode
 set mouse=a " allows to use mouse
 
+
+let g:AutoClosePreserveDotReg = 0
