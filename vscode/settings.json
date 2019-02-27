@@ -52,4 +52,74 @@
     "editor.fontLigatures": true,
     "python.linting.enabled": false,
     "auto-close-tag.SublimeText3Mode": true,
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<C-l>"],
+            "after": ["<C-w>", "<C-l>"]
+        },
+        {
+            "before": ["<C-k>"],
+            "after": ["<C-w>", "<C-k>"]
+        },
+        {
+            "before": ["<C-j>"],
+            "after": ["<C-w>", "<C-j>"]
+        },
+        {
+            "before": ["<C-h>"],
+            "after": ["<C-w>", "<C-h>"]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<C-l>"],
+            "after": ["<C-w>", "<C-l>"]
+        },
+        {
+            "before": ["<C-k>"],
+            "after": ["<C-w>", "<C-k>"]
+        },
+        {
+            "before": ["<C-j>"],
+            "after": ["<C-w>", "<C-j>"]
+        },
+        {
+            "before": ["<C-h>"],
+            "after": ["<C-w>", "<C-h>"]
+        },
+        {
+            "before": ["B"],
+            "after": ["^"]
+        },
+        {
+            "before": ["E"],
+            "after": ["$"]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<C-l>"],
+            "after": ["<C-w>", "<C-l>"]
+        },
+        {
+            "before": ["<C-k>"],
+            "after": ["<C-w>", "<C-k>"]
+        },
+        {
+            "before": ["<C-j>"],
+            "after": ["<C-w>", "<C-j>"]
+        },
+        {
+            "before": ["<C-h>"],
+            "after": ["<C-w>", "<C-h>"]
+        },
+        {
+            "before": ["B"],
+            "after": ["^"]
+        },
+        {
+            "before": ["E"],
+            "after": ["$"]
+        }
+    ]
 }
