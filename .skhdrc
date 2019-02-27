@@ -122,6 +122,8 @@ alt + shift - 0x12 : chunkc tiling::desktop --focus 1
 alt + shift - 0x13 : chunkc tiling::desktop --focus 2
 alt + shift - 0x14 : chunkc tiling::desktop --focus 3
 alt + shift - 0x15 : chunkc tiling::desktop --focus 4
+alt + shift - 0x16 : chunkc tiling::desktop --focus 5
+alt + shift - 0x17 : chunkc tiling::desktop --focus 6
 
 # send window to desktop
 shift + alt - x : chunkc tiling::window --send-to-desktop $(chunkc get _last_active_desktop)
@@ -131,6 +133,8 @@ shift + ctrl - 0x12 : chunkc tiling::window --send-to-desktop 1
 shift + ctrl - 0x13 : chunkc tiling::window --send-to-desktop 2
 shift + ctrl - 0x14 : chunkc tiling::window --send-to-desktop 3
 shift + ctrl - 0x15 : chunkc tiling::window --send-to-desktop 4
+shift + ctrl - 0x16 : chunkc tiling::window --send-to-desktop 5
+shift + ctrl - 0x17 : chunkc tiling::window --send-to-desktop 6
 
 # increase region size
 shift + alt - a : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge west
