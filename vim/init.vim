@@ -10,6 +10,7 @@ colorscheme Inanis
 " -- Display
 set title		" Update title of window in term
 set number		" Display line numbers
+set relativenumber " Display distance from current cursor position
 set ruler		" Display cursor position
 set showmatch		" Show matching brackets, etc
 set wrap		" Wrap lines when they are too long
