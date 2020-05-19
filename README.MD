@@ -13,13 +13,9 @@
 ##### Files
   1. neofetch/ - custom print values
 
-## fb-messenger-cli
+## yabairc + skhd
 ##### Files
-  1. fb-messenger-cli/ - fixed notifications 4 macOS
-
-## Chunkwm + skhd
-##### Files
-  1. .chunkwmrc - has to be +x, custom positioning and padding
+  1. .yabairc - has to be +x, custom positioning and padding
   2. .skhdrc - custom keyboard shortcuts
 
 ## VSCode

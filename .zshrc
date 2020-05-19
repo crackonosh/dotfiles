@@ -5,6 +5,8 @@
 export ZSH="/Users/lukashais/.oh-my-zsh"
 
 export PATH="/usr/local/Cellar:/usr/local/sbin:$PATH"
+export PATH="$PATH:/Users/lukashais/Qt5.14.2/5.14.2/clang_64/bin"
+export PATH="$PATH:/Users/lukashais/Library/Python/2.7/bin"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -64,14 +66,10 @@ plugins=(
   npm
   osx
   web-search
-  zsh-256color
   colored-man-pages
-  you-should-use
-  zsh-better-npm-completion
   colorize
   cp
   jump
-  thefuck
 )
 source $ZSH/oh-my-zsh.sh
 
@@ -104,13 +102,18 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="vimr"
-alias cmusplaying="bash cmus-nowplaying.sh"
 alias gc='git clone'
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron"
-alias rnri="react-native run-ios"
-alias fb-messenger-cli="~/node_modules/fb-messenger-cli/cli.js"
+alias rnri="npx react-native run-ios"
+alias rnra="npx react-native run-android"
 alias cat="ccat"
-alias cp="cpv --progress -hhh"
 alias sptab="split_tab"
 alias vsptab="vsplit_tab"
 export PATH="/usr/local/opt/binutils/bin:$PATH"
+
+# Shit for RN android build
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools

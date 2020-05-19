@@ -5,7 +5,7 @@ set nocompatible
 call pathogen#infect()
 
 syntax on 
-colorscheme Inanis
+colorscheme inanis
 
 " -- Display
 set title		" Update title of window in term
