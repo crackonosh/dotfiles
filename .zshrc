@@ -5,7 +5,6 @@
 export ZSH="/Users/lukashais/.oh-my-zsh"
 
 export PATH="/usr/local/Cellar:/usr/local/sbin:$PATH"
-export PATH="$PATH:/Users/lukashais/Qt5.14.2/5.14.2/clang_64/bin"
 export PATH="$PATH:/Users/lukashais/Library/Python/2.7/bin"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
