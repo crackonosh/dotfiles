@@ -4,6 +4,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/lukashais/.oh-my-zsh"
 
+export PATH="/usr/local/opt/binutils/bin:$PATH"
 export PATH="/usr/local/Cellar:/usr/local/sbin:$PATH"
 export PATH="$PATH:/Users/lukashais/Library/Python/2.7/bin"
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -69,6 +70,7 @@ plugins=(
   colorize
   cp
   jump
+  zsh-syntax-highlighting
 )
 source $ZSH/oh-my-zsh.sh
 
@@ -102,13 +104,13 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="vimr"
 alias gc='git clone'
-alias code="/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron"
+alias code="/Applications/VSCodium.app/Contents/MacOS/Electron"
 alias rnri="npx react-native run-ios"
 alias rnra="npx react-native run-android"
 alias cat="ccat"
 alias sptab="split_tab"
 alias vsptab="vsplit_tab"
-export PATH="/usr/local/opt/binutils/bin:$PATH"
+alias gcm="git checkout main"
 
 # Shit for RN android build
 export ANDROID_HOME=$HOME/Library/Android/sdk

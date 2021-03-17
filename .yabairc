@@ -1,5 +1,9 @@
 #!/usr/bin/env sh
 
+# BigSur workaround for loading scripting addition from yabai
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
 # bar settings
 #yabai -m config status_bar                   off
 #yabai -m config status_bar_text_font         "Fira Code:Bold:12.0"
