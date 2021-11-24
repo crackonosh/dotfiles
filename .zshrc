@@ -7,6 +7,7 @@ export ZSH="/Users/lukashais/.oh-my-zsh"
 export PATH="/usr/local/opt/binutils/bin:$PATH"
 export PATH="/usr/local/Cellar:/usr/local/sbin:$PATH"
 export PATH="$PATH:/Users/lukashais/Library/Python/2.7/bin"
+export PATH="$PATH:/Users/lukashais/.composer/vendor/bin"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -71,6 +72,7 @@ plugins=(
   cp
   jump
   zsh-syntax-highlighting
+  zsh-autosuggestions
 )
 source $ZSH/oh-my-zsh.sh
 
@@ -111,6 +113,7 @@ alias cat="ccat"
 alias sptab="split_tab"
 alias vsptab="vsplit_tab"
 alias gcm="git checkout main"
+alias freespace="echo \"Free space:\" $(diskutil info / | grep "Free Space" | awk '{print $4 $5}')"
 
 # Shit for RN android build
 export ANDROID_HOME=$HOME/Library/Android/sdk
