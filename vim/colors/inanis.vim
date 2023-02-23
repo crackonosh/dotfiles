@@ -1,9 +1,9 @@
 " Vim color file
 "
-" Author: Samuraj Hais
+" Author: Lukas 'Cr4ckonosh' Hais
 "
 " Note: Inanis color theme based by my needs
-"   will update soon I think
+"   will update soon I think (last commit was 5 years ago; aged well : - ))
 "   steal as you please
 "
 
