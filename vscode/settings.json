@@ -1,8 +1,5 @@
 {
-    "editor.rulers": [
-        80,
-        120
-    ],
+    "editor.rulers": [80, 120],
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 100000,
     "workbench.colorCustomizations": {
