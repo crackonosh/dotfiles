@@ -80,7 +80,7 @@ nnoremap <C-l> <C-w>l
 
 " Indent-Guides
 let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guide_size = 2
+let g:indent_guide_size = 4
 
 " -- Movement
 " move to beginning/end of line
@@ -93,7 +93,7 @@ set noswapfile
 set autowrite   " :write before command
 set hidden " Hide file instead of abandoning when switching to another buffer
 set showmode " Show the current mode
-set mouse=a " allows to use mouse
+set mouse=a " allows to use mouse (fight me!)
 
 
 let g:AutoClosePreserveDotReg = 0
