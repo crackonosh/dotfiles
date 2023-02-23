@@ -1,4 +1,8 @@
 {
+    "editor.rulers": [
+        80,
+        120
+    ],
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 100000,
     "workbench.colorCustomizations": {
@@ -7,7 +11,7 @@
         "sideBar.background": "#181818",
         "sideBar.foreground": "#cecece",
         "panel.background": "#181818",
-        "panelTitle.activeForeground": "#cecece",
+        "panelTitle.activeForeground": "#eee",
         "panelTitle.inactiveForeground": "#cecece",
         "panel.dropBackground": "#181818",
         "activityBar.background": "#181818",
@@ -31,7 +35,7 @@
         "titleBar.activeForeground": "#cecece",
         "titleBar.inactiveBackground": "#333",
         "titleBar.inactiveForeground": "#cecece",
-    }, 
+    },
     "editor.tokenColorCustomizations": {
         "strings": "#FFFB00",
         "variables": "#F8F8F8",
@@ -41,85 +45,196 @@
         "numbers": "#AA66FF",
         "types": "#00C2FF",
         "textMateRules": [],
-        
     },
-    "editor.tabSize": 2,
+    "editor.tabSize": 4,
     "editor.detectIndentation": true,
     "window.zoomLevel": 0,
     "editor.wordWrap": "on",
     "workbench.iconTheme": "vscode-icons",
     "editor.fontFamily": "'Fira Code'",
     "editor.fontLigatures": true,
-    "python.linting.enabled": false,
     "auto-close-tag.SublimeText3Mode": true,
     "vim.insertModeKeyBindingsNonRecursive": [
         {
-            "before": ["<C-l>"],
-            "after": ["<C-w>", "<C-l>"]
+            "before": [
+                "<C-l>"
+            ],
+            "after": [
+                "<C-w>",
+                "<C-l>"
+            ]
         },
         {
-            "before": ["<C-k>"],
-            "after": ["<C-w>", "<C-k>"]
+            "before": [
+                "<C-k>"
+            ],
+            "after": [
+                "<C-w>",
+                "<C-k>"
+            ]
         },
         {
-            "before": ["<C-j>"],
-            "after": ["<C-w>", "<C-j>"]
+            "before": [
+                "<C-j>"
+            ],
+            "after": [
+                "<C-w>",
+                "<C-j>"
+            ]
         },
         {
-            "before": ["<C-h>"],
-            "after": ["<C-w>", "<C-h>"]
+            "before": [
+                "<C-h>"
+            ],
+            "after": [
+                "<C-w>",
+                "<C-h>"
+            ]
         }
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
         {
-            "before": ["<C-l>"],
-            "after": ["<C-w>", "<C-l>"]
+            "before": [
+                "<C-l>"
+            ],
+            "after": [
+                "<C-w>",
+                "<C-l>"
+            ]
         },
         {
-            "before": ["<C-k>"],
-            "after": ["<C-w>", "<C-k>"]
+            "before": [
+                "<C-k>"
+            ],
+            "after": [
+                "<C-w>",
+                "<C-k>"
+            ]
         },
         {
-            "before": ["<C-j>"],
-            "after": ["<C-w>", "<C-j>"]
+            "before": [
+                "<C-j>"
+            ],
+            "after": [
+                "<C-w>",
+                "<C-j>"
+            ]
         },
         {
-            "before": ["<C-h>"],
-            "after": ["<C-w>", "<C-h>"]
+            "before": [
+                "<C-h>"
+            ],
+            "after": [
+                "<C-w>",
+                "<C-h>"
+            ]
         },
         {
-            "before": ["B"],
-            "after": ["^"]
+            "before": [
+                "B"
+            ],
+            "after": [
+                "^"
+            ]
         },
         {
-            "before": ["E"],
-            "after": ["$"]
+            "before": [
+                "E"
+            ],
+            "after": [
+                "$"
+            ]
         }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
-            "before": ["<C-l>"],
-            "after": ["<C-w>", "<C-l>"]
+            "before": [
+                "<C-l>"
+            ],
+            "after": [
+                "<C-w>",
+                "<C-l>"
+            ]
         },
         {
-            "before": ["<C-k>"],
-            "after": ["<C-w>", "<C-k>"]
+            "before": [
+                "<C-k>"
+            ],
+            "after": [
+                "<C-w>",
+                "<C-k>"
+            ]
         },
         {
-            "before": ["<C-j>"],
-            "after": ["<C-w>", "<C-j>"]
+            "before": [
+                "<C-j>"
+            ],
+            "after": [
+                "<C-w>",
+                "<C-j>"
+            ]
         },
         {
-            "before": ["<C-h>"],
-            "after": ["<C-w>", "<C-h>"]
+            "before": [
+                "<C-h>"
+            ],
+            "after": [
+                "<C-w>",
+                "<C-h>"
+            ]
         },
         {
-            "before": ["B"],
-            "after": ["^"]
+            "before": [
+                "B"
+            ],
+            "after": [
+                "^"
+            ]
         },
         {
-            "before": ["E"],
-            "after": ["$"]
+            "before": [
+                "E"
+            ],
+            "after": [
+                "$"
+            ]
         }
-    ]
+    ],
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.indentation": true,
+    "editor.guides.highlightActiveIndentation": true,
+    "editor.guides.highlightActiveBracketPair": true,
+    "editor.language.brackets": [
+        [
+            "[",
+            "]"
+        ],
+        [
+            "(",
+            ")"
+        ],
+        [
+            "{",
+            "}"
+        ]
+    ],
+    "editor.language.colorizedBracketPairs": [
+        [
+            "[",
+            "]"
+        ],
+        [
+            "(",
+            ")"
+        ],
+        [
+            "{",
+            "}"
+        ]
+    ],
+    "telemetry.telemetryLevel": "off",
+    "intelephense.telemetry.enabled": false,
+    "php.suggest.basic": false,
+    "intelephense.environment.phpVersion": "7.4",
+    "vim.foldfix": true,
 }
