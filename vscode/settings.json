@@ -232,6 +232,8 @@
     "telemetry.telemetryLevel": "off",
     "intelephense.telemetry.enabled": false,
     "php.suggest.basic": false,
-    "intelephense.environment.phpVersion": "7.4",
+    "intelephense.format.enable": true,
+    "intelephense.format.braces": "allman",
+    "intelephense.environment.phpVersion": "7.4.0",
     "vim.foldfix": true,
 }
