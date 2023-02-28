@@ -236,4 +236,6 @@
     "intelephense.format.braces": "allman",
     "intelephense.environment.phpVersion": "7.4.0",
     "vim.foldfix": true,
+    "phpclassgen.vendor": "App",
+    "application.shellEnvironmentResolutionTimeout": 30,
 }
