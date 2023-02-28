@@ -55,7 +55,6 @@ source $ZSH/oh-my-zsh.sh
 if [[ $OS == "Darwin" ]];
 then
 	alias vim="vimr"
-	alias code="/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron"
 	alias sptab="split_tab"
 	alias vsptab="vsplit_tab"
 	alias freespace="echo \"Free space:\" $(diskutil info / | grep "Free Space" | awk '{print $4 $5}')"
