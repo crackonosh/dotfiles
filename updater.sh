@@ -18,7 +18,7 @@ then
     if [[ -f $HOME/.yabairc ]] && [[ -f $HOME/.skhdrc ]];
     then
         echo "Updating yabai & skhd config..."
-        yes | command cp -r $HOME/.yabairc $HOME/.skhdrc $DOTFILES_FOLDER
+        yes | command cp -r $HOME/.yabairc $HOME/.skhdrc $DOTFILES_FOLDER/macOS
     else
         echo "Unable to find '.yabairc' and/or '.skhdrc' in '\$HOME' folder, skipping..."
     fi
@@ -54,3 +54,4 @@ else
 fi
 
 exit 0
+
