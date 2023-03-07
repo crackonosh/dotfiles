@@ -23,8 +23,8 @@ ___
 ### Masox
 #### yabairc + skhd
 ##### Files
-  1. .yabairc - has to be +x, custom positioning and padding
-  2. .skhdrc - custom keyboard shortcuts
+  1. macOS/.yabairc - has to be +x, custom positioning and padding
+  2. macOS/.skhdrc - custom keyboard shortcuts
 
 ##### iTerm2
   1. macOS/iTermProfile - json profile config for iTerm
