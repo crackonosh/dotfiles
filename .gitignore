@@ -1,5 +1,5 @@
-# shell script
-updater.sh
-
- 
+# Masox autogen files
 .DS_Store
+
+# vscode bloat
+.vscode

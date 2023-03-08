@@ -1,31 +1,31 @@
-## VIM
-##### Files
+# CrackedDotfiles
+### All systems
+#### Fonts
+  1. [Fira Code](https://github.com/tonsky/FiraCode)
+
+#### NEOVIM
   1. vim/autoload/ - pathogen
-  2. vim/bundle/ - plugins
+  2. vim/bundle/ - list of plugins
   3. vim/colors/ - color theme
-  4. vim/init.vim - vimrc for neovim
+  4. vim/init.vim - vimrc
 
-## Oh-My-Zsh
+#### Oh-My-Zsh
 ##### Files
-  1. .zshrc
+  1. .zshrc - aliases, used plugins, PATH modify, ...
 
-## Neofetch
+#### VSCode
 ##### Files
-  1. neofetch/ - custom print values
+  1. vscode/settings.json - user settings
+  2. vscode/README.MD - list of plugins
 
-## yabairc + skhd
+___
+
+### Masox
+#### yabairc + skhd
 ##### Files
-  1. .yabairc - has to be +x, custom positioning and padding
-  2. .skhdrc - custom keyboard shortcuts
+  1. macOS/.yabairc - has to be +x, custom positioning and padding
+  2. macOS/.skhdrc - custom keyboard shortcuts
 
-## VSCode
-##### Files
-  1. vscode/settings.json
-  2. vscode/README.MD
-
-## Other
-##### Font
-  1. Fira Code - everywhere used custom font
 ##### iTerm2
   1. macOS/iTermProfile - json profile config for iTerm
   2. macOS/Inanis.itermcolors - custom color scheme
