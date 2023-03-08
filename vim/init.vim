@@ -60,12 +60,6 @@ autocmd BufRead,BufNewFile *.php set filetype=php
 set wildignore+=node_modules/*
 
 
-" -- Font
-if has("gui_running")
-  set macligatures
-endif
-
-
 " NERDTree
 autocmd vimenter * NERDTree
 map <C-n> :NERDTreeToggle<CR>

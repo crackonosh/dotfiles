@@ -62,3 +62,4 @@ fi
 alias gc='git clone'
 alias cat="ccat"
 alias gcm="git checkout main"
+alias gs="git status"
