@@ -3,6 +3,7 @@
 OS=$(command uname -s)
 DOTFILES_FOLDER=$(dirname "$0")
 VIM_FOLDER=$HOME/.config/nvim
+VIM_PLUGIN_REGEX="^\* \[([a-zA-Z0-9. -]+)\]\((.+)\)$"
 
 echo "Found OS: $OS"
 if [[ $OS == "Darwin" ]];
@@ -26,11 +27,35 @@ then
 
     echo "Copying nvim files to '\$HOME/.config/nvim'..."
     mkdir -p $VIM_FOLDER/bundle
-    yes | command cp -i -v -R $DOTFILES_FOLDER/vim/autoload $VIM_FOLDER
-    yes | command cp -i -v -R $DOTFILES_FOLDER/vim/colors $VIM_FOLDER
-    yes | command cp -i -v $DOTFILES_FOLDER/vim/init.vim $VIM_FOLDER
-    yes | command cp -i -v $DOTFILES_FOLDER/vim/bundle/README.md $VIM_FOLDER/bundle
-    # install vim extensions
+    command cp -i -v -R $DOTFILES_FOLDER/vim/autoload $VIM_FOLDER
+    command cp -i -v -R $DOTFILES_FOLDER/vim/colors $VIM_FOLDER
+    command cp -i -v $DOTFILES_FOLDER/vim/init.vim $VIM_FOLDER
+    command cp -i -v $DOTFILES_FOLDER/vim/bundle/README.md $VIM_FOLDER/bundle
+
+    VIM_PLUGIN_NAMES=()
+    VIM_PLUGIN_LINKS=()
+    while read p;
+    do
+      if [[ $p =~ $VIM_PLUGIN_REGEX ]]
+      then
+        VIM_PLUGIN_NAMES+=("${BASH_REMATCH[1]}")
+        VIM_PLUGIN_LINKS+=("${BASH_REMATCH[2]}")
+      fi
+    done < $VIM_FOLDER/bundle/README.md
+
+    count=${#VIM_PLUGIN_NAMES[@]}
+    for (( i=0; i<${count}; i++ ));
+    do
+      read -p "Found nvim plugin '${VIM_PLUGIN_NAMES[$i]}', do you wish to install it? [Y/n] " -n 1 -r
+      if [[ $REPLY != "" ]] 
+      then 
+        echo
+      fi
+      if [[ $REPLY == "y" || $REPLY == "Y" || $REPLY == "" ]]
+      then
+        echo "yesss"
+      fi
+    done
 
 elif [[ $OS == "Linux" ]];
 then
@@ -53,10 +78,10 @@ then
 
     echo "Copying nvim files to '\$HOME/.config/nvim'..."
     mkdir -p $VIM_FOLDER/bundle
-    yes | command cp -i -v -R $DOTFILES_FOLDER/vim/autoload $VIM_FOLDER
-    yes | command cp -i -v -R $DOTFILES_FOLDER/vim/colors $VIM_FOLDER
-    yes | command cp -i -v $DOTFILES_FOLDER/vim/init.vim $VIM_FOLDER
-    yes | command cp -i -v $DOTFILES_FOLDER/vim/bundle/README.md $VIM_FOLDER/bundle
+    command cp -i -v -R $DOTFILES_FOLDER/vim/autoload $VIM_FOLDER
+    command cp -i -v -R $DOTFILES_FOLDER/vim/colors $VIM_FOLDER
+    command cp -i -v $DOTFILES_FOLDER/vim/init.vim $VIM_FOLDER
+    command cp -i -v $DOTFILES_FOLDER/vim/bundle/README.md $VIM_FOLDER/bundle
 
     ############### VSCODE
     if ! command -v code &> /dev/null
@@ -66,7 +91,7 @@ then
     fi
     echo "Copying vscode setting to '\$HOME/.config/Code/User/settings.json'..."
     mkdir -p $HOME/.config/Code/User
-    yes | command cp -i -v $DOTFILES_FOLDER/vscode/settings.json $HOME/.config/Code/User
+    command cp -i -v $DOTFILES_FOLDER/vscode/settings.json $HOME/.config/Code/User
     
     pacman -Q ttf-fira-code &> /dev/null
     if [[ $? -eq 0 ]]
