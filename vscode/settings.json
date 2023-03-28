@@ -1,5 +1,8 @@
 {
-    "editor.rulers": [80, 120],
+    "editor.rulers": [
+        80,
+        120
+    ],
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 100000,
     "workbench.colorCustomizations": {
@@ -45,9 +48,10 @@
     },
     "editor.tabSize": 4,
     "editor.detectIndentation": true,
+    "window.zoomLevel": 0,
     "editor.wordWrap": "on",
     "workbench.iconTheme": "vscode-icons",
-    "editor.fontFamily": "'Fira Code'",
+    "editor.fontFamily": "'FiraCode Nerd Font'",
     "editor.fontLigatures": true,
     "auto-close-tag.SublimeText3Mode": true,
     "vim.insertModeKeyBindingsNonRecursive": [
@@ -237,4 +241,5 @@
     "vim.foldfix": true,
     "phpclassgen.vendor": "App",
     "application.shellEnvironmentResolutionTimeout": 30,
+    "vim.camelCaseMotion.enable": true,
 }

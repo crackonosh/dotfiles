@@ -59,6 +59,7 @@ then
 	alias vsptab="vsplit_tab"
 	alias freespace="echo \"Free space:\" $(diskutil info / | grep "Free Space" | awk '{print $4 $5}')"
 fi
+alias ls="lsd"
 alias gc='git clone'
 alias cat="ccat"
 alias gcm="git checkout main"
