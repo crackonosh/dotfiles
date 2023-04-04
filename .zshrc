@@ -34,12 +34,10 @@ plugins=(
   colorize
   cp
   jump
-  zsh-syntax-highlighting
-  zsh-autosuggestions
 )
 if [[ $OS == "Darwin" ]];
 then
-	plugins+=(macos)
+  plugins+=(macos zsh-syntax-highlighting zsh-autosuggestions)
 fi
 source $ZSH/oh-my-zsh.sh
 
@@ -55,12 +53,13 @@ source $ZSH/oh-my-zsh.sh
 if [[ $OS == "Darwin" ]];
 then
 	alias vim="vimr"
-	alias sptab="split_tab"
-	alias vsptab="vsplit_tab"
 	alias freespace="echo \"Free space:\" $(diskutil info / | grep "Free Space" | awk '{print $4 $5}')"
 fi
-alias ls="lsd"
 alias gc='git clone'
-alias cat="ccat"
 alias gcm="git checkout main"
 alias gs="git status"
+alias ls="lsd"
+alias cat="colorize_cat" # plugin colorize
+alias less="colorize_less" # plugin colorize
+alias chead='f(){ colorize_cat "$@" | head; unset -f f; }; f' # this is used for supporting colored output on head command, should be used like `chead FILENAME.c`
+alias ctail='f(){ colorize_cat "$@" | tail; unset -f f; }; f' # this is used for supporting colored output on tail command
