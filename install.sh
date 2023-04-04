@@ -11,18 +11,18 @@ then
     # install brew, yabai, skhd, vscode, iterm, font, nvim, docker
     if ! command -v brew &> /dev/null
     then
-      echo "Unable to find homebrew package manager, will try to install it..."
-      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        echo "Unable to find homebrew package manager, will try to install it..."
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     else
-      echo "Homebrew already installed..."
+        echo "Homebrew already installed..."
     fi
 
     if ! command -v nvim &> /dev/null
     then
-      echo "Unable to find neovim, will try to install it using homebrew..."
-      brew install neovim
+        echo "Unable to find neovim, will try to install it using homebrew..."
+        brew install neovim
     else
-      echo "Neovim already installed..."
+        echo "Neovim already installed..."
     fi
 
     echo "Copying nvim files to '\$HOME/.config/nvim'..."
@@ -36,25 +36,52 @@ then
     VIM_PLUGIN_LINKS=()
     while read p;
     do
-      if [[ $p =~ $VIM_PLUGIN_REGEX ]]
-      then
-        VIM_PLUGIN_NAMES+=("${BASH_REMATCH[1]}")
-        VIM_PLUGIN_LINKS+=("${BASH_REMATCH[2]}")
-      fi
+        if [[ $p =~ $VIM_PLUGIN_REGEX ]]
+        then
+            VIM_PLUGIN_NAMES+=("${BASH_REMATCH[1]}")
+            VIM_PLUGIN_LINKS+=("${BASH_REMATCH[2]}")
+        fi
     done < $VIM_FOLDER/bundle/README.md
 
     count=${#VIM_PLUGIN_NAMES[@]}
     for (( i=0; i<${count}; i++ ));
     do
-      read -p "Found nvim plugin '${VIM_PLUGIN_NAMES[$i]}', do you wish to install it? [Y/n] " -n 1 -r
-      if [[ $REPLY != "" ]] 
-      then 
-        echo
-      fi
-      if [[ $REPLY == "y" || $REPLY == "Y" || $REPLY == "" ]]
-      then
-        echo "yesss"
-      fi
+        read -p "Found nvim plugin '${VIM_PLUGIN_NAMES[$i]}', do you wish to install it using git? [Y/n] " -n 1 -r
+        if [[ $REPLY != "" ]]
+        then
+            echo
+        fi
+
+        if [[ $REPLY == "y" || $REPLY == "Y" || $REPLY == "" ]]
+        then
+            if ! command -v git &> /dev/null
+            then
+                echo "Unable to find git command. :C"
+            else
+                if [[ -d $VIM_FOLDER/bundle/${VIM_PLUGIN_NAMES[$i]} ]]
+                then
+                    echo "Is dir"
+                fi
+                if [[ -s $VIM_FOLDER/bundle/${VIM_PLUGIN_NAMES[$i]} ]]
+                then
+                    read -p "It seems like the plugin already exists on this machine, do you want me to reinstall it? [Y/n] " -n 1 -r
+                    if [[ $REPLY != "" ]]
+                    then
+                        echo
+                    fi
+
+                    if [[ $REPLY == "y" || $REPLY == "Y" || $REPLY == "" ]]
+                    then
+                        command rm -rf $VIM_FOLDER/bundle/${VIM_PLUGIN_NAMES[$i]}
+                        command mkdir -p $VIM_FOLDER/bundle/${VIM_PLUGIN_NAMES[$i]}
+                        git clone ${VIM_PLUGIN_LINKS[$i]} $VIM_FOLDER/bundle/${VIM_PLUGIN_NAMES[$i]}
+                    fi
+                else
+                    command mkdir -p $VIM_FOLDER/bundle/${VIM_PLUGIN_NAMES[$i]}
+                    git clone ${VIM_PLUGIN_LINKS[$i]} $VIM_FOLDER/bundle/${VIM_PLUGIN_NAMES[$i]}
+                fi
+            fi
+        fi
     done
 
 elif [[ $OS == "Linux" ]];

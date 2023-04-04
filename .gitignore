@@ -3,3 +3,7 @@
 
 # vscode bloat
 .vscode
+
+# just to make sure that the nvim plugins wont get uploaded as well
+vim/bundle/*
+!vim/bundle/README.md
