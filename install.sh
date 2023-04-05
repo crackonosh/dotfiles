@@ -17,10 +17,77 @@ then
         echo "Homebrew already installed..."
     fi
 
+    ############### SKHD ###############
+    if ! command -v skhd &> /dev/null
+    then
+        read -p "Unable to find skhd, do you want me to install it with homebrew? [Y/n] " -n 1 -r
+        if [[ $REPLY != "" ]]
+        then
+            echo
+        fi
+
+        if [[ $REPLY == "y" || $REPLY == "Y" || $REPLY == "" ]]
+        then
+            command brew install koekeishiya/formulae/skhd
+            echo "Copying .skhdrc to \$HOME folder..."
+            command cp -i -v $DOTFILES_FOLDER/macOS/.skhdrc $HOME
+            echo "Gonna start the skhd service with homebrew..."
+            command brew services start skhd
+        fi
+    else
+        echo "Copying .skhdrc to \$HOME folder ..."
+        command cp -i -v $DOTFILES_FOLDER/macOS/.skhdrc $HOME
+
+        read -p "Do you want me to restart the service? [Y/n] " -n 1 -r
+        if [[ $REPLY != "" ]]
+        then
+            echo
+        fi
+
+        if [[ $REPLY == "y" || $REPLY == "Y" || $REPLY == "" ]]
+        then
+            command brew services restart skhd
+        fi
+    fi
+
+    ############### YABAI ###############
+    if ! command -v yabai &> /dev/null
+    then
+        read -p "Unable to find yabai, do you want me to install it with homebrew? [Y/n] " -n 1 -r
+        if [[ $REPLY != "" ]]
+        then
+            echo
+        fi
+
+        if [[ $REPLY == "y" || $REPLY == "Y" || $REPLY == "" ]]
+        then
+            command brew install koekeishiya/formulae/yabai
+            echo "Copying .yabairc to \$HOME folder ..."
+            command cp -i -v $DOTFILES_FOLDER/macOS/.yabairc $HOME
+            echo "Gonna start the yabai service with homebrew..."
+            command brew services start yabai
+        fi
+    else
+        echo "Copying .yabairc to \$HOME folder ..."
+        command cp -i -v $DOTFILES_FOLDER/macOS/.yabairc $HOME
+
+        read -p "Do you want me to restart the service? [Y/n] " -n 1 -r
+        if [[ $REPLY != "" ]]
+        then
+            echo
+        fi
+
+        if [[ $REPLY == "y" || $REPLY == "Y" || $REPLY == "" ]]
+        then
+            command brew services restart yabai
+        fi
+    fi
+
+    ############### NVIM ###############
     if ! command -v nvim &> /dev/null
     then
         echo "Unable to find neovim, will try to install it using homebrew..."
-        brew install neovim
+        command brew install neovim
     else
         echo "Neovim already installed..."
     fi
@@ -32,6 +99,7 @@ then
     command cp -i -v $DOTFILES_FOLDER/vim/init.vim $VIM_FOLDER
     command cp -i -v $DOTFILES_FOLDER/vim/bundle/README.md $VIM_FOLDER/bundle
 
+    ############### NVIM PLUGINS ###############
     VIM_PLUGIN_NAMES=()
     VIM_PLUGIN_LINKS=()
     while read p;
@@ -58,27 +126,23 @@ then
             then
                 echo "Unable to find git command. :C"
             else
-                if [[ -d $VIM_FOLDER/bundle/${VIM_PLUGIN_NAMES[$i]} ]]
-                then
-                    echo "Is dir"
-                fi
                 if [[ -s $VIM_FOLDER/bundle/${VIM_PLUGIN_NAMES[$i]} ]]
                 then
                     read -p "It seems like the plugin already exists on this machine, do you want me to reinstall it? [y/N] " -n 1 -r
                     if [[ $REPLY != "" ]]
                     then
-                        echo
+                        echo ""
                     fi
 
                     if [[ $REPLY == "y" || $REPLY == "Y" ]]
                     then
                         command rm -rf $VIM_FOLDER/bundle/${VIM_PLUGIN_NAMES[$i]}
                         command mkdir -p $VIM_FOLDER/bundle/${VIM_PLUGIN_NAMES[$i]}
-                        git clone ${VIM_PLUGIN_LINKS[$i]} $VIM_FOLDER/bundle/${VIM_PLUGIN_NAMES[$i]}
+                        command git clone ${VIM_PLUGIN_LINKS[$i]} $VIM_FOLDER/bundle/${VIM_PLUGIN_NAMES[$i]}
                     fi
                 else
                     command mkdir -p $VIM_FOLDER/bundle/${VIM_PLUGIN_NAMES[$i]}
-                    git clone ${VIM_PLUGIN_LINKS[$i]} $VIM_FOLDER/bundle/${VIM_PLUGIN_NAMES[$i]}
+                    command git clone ${VIM_PLUGIN_LINKS[$i]} $VIM_FOLDER/bundle/${VIM_PLUGIN_NAMES[$i]}
                 fi
             fi
         fi

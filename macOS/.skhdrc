@@ -73,12 +73,11 @@ shift + ctrl - 9 : yabai -m window --space  9
 shift + ctrl - 0 : yabai -m window --space 10
 
 # focus monitor
-#trl + alt - x  : yabai -m display --focus recent
-#trl + alt - z  : yabai -m display --focus prev
-#trl + alt - c  : yabai -m display --focus next
-#trl + alt - 1  : yabai -m display --focus 1
-#trl + alt - 2  : yabai -m display --focus 2
-#trl + alt - 3  : yabai -m display --focus 3
+ctrl + alt - p  : yabai -m display --focus prev
+ctrl + alt - n  : yabai -m display --focus next
+ctrl + alt - 1  : yabai -m display --focus 1
+ctrl + alt - 2  : yabai -m display --focus 2
+ctrl + alt - 3  : yabai -m display --focus 3
 
 # send window to monitor and follow focus
 #ctrl + cmd - x  : yabai -m window --display recent; yabai -m display --focus recent
