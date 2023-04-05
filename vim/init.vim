@@ -19,12 +19,12 @@ set scrolloff=3		" Display at least 3 lines around cursor
 
 " -- Text management
 filetype plugin indent on
-" 2 space please
+" 4 space please
 set expandtab
-set shiftwidth=2
-set tabstop=2
-set softtabstop=2
-set shiftround " Round indent to nearest multiple of 2
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set shiftround " Round indent to nearest multiple of 4
 
 
 " -- Search
