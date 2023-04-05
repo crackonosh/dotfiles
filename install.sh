@@ -64,13 +64,13 @@ then
                 fi
                 if [[ -s $VIM_FOLDER/bundle/${VIM_PLUGIN_NAMES[$i]} ]]
                 then
-                    read -p "It seems like the plugin already exists on this machine, do you want me to reinstall it? [Y/n] " -n 1 -r
+                    read -p "It seems like the plugin already exists on this machine, do you want me to reinstall it? [y/N] " -n 1 -r
                     if [[ $REPLY != "" ]]
                     then
                         echo
                     fi
 
-                    if [[ $REPLY == "y" || $REPLY == "Y" || $REPLY == "" ]]
+                    if [[ $REPLY == "y" || $REPLY == "Y" ]]
                     then
                         command rm -rf $VIM_FOLDER/bundle/${VIM_PLUGIN_NAMES[$i]}
                         command mkdir -p $VIM_FOLDER/bundle/${VIM_PLUGIN_NAMES[$i]}
