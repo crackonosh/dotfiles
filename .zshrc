@@ -8,6 +8,7 @@ then
 	export PATH="/usr/local/Cellar:/usr/local/sbin:$PATH"
 	export PATH="$PATH:/Users/$USER/Library/Python/2.7/bin"
 	export PATH="$PATH:/Users/$USER/.composer/vendor/bin"
+    export EDITOR=$(command -pv nvim || command -pv vim || command -pv vi)
 elif [[ $OS == "Linux" ]];
 then
 	# Path to your oh-my-zsh installation.
