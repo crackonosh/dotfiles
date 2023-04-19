@@ -55,6 +55,7 @@ if [[ $OS == "Darwin" ]];
 then
 	alias vim="vimr"
 	alias freespace="echo \"Free space:\" $(diskutil info / | grep "Free Space" | awk '{print $4 $5}')"
+    alias yabres='launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"'
 fi
 alias gc='git clone'
 alias gcm="git checkout main"
