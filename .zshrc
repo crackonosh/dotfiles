@@ -13,6 +13,7 @@ elif [[ $OS == "Linux" ]];
 then
 	# Path to your oh-my-zsh installation.
 	export ZSH="/home/$USER/.oh-my-zsh"
+    export EDITOR=$(command -pv nvim || command -pv vim || command -pv vi)
 fi
 
 # Set name of the theme to load.
@@ -40,7 +41,14 @@ if [[ $OS == "Darwin" ]];
 then
   plugins+=(macos zsh-syntax-highlighting zsh-autosuggestions)
 fi
+
 source $ZSH/oh-my-zsh.sh
+
+if [[ $OS == "Linux" ]];
+then
+  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
 
 # User configuration
 #
@@ -62,6 +70,7 @@ alias gcm="git checkout main"
 alias gs="git status"
 alias ls="lsd"
 alias cat="colorize_cat" # plugin colorize
+alias ccat="command -p cat"
 alias less="colorize_less" # plugin colorize
 alias chead='f(){ colorize_cat "$@" | head; unset -f f; }; f' # this is used for supporting colored output on head command, should be used like `chead FILENAME.c`
 alias ctail='f(){ colorize_cat "$@" | tail; unset -f f; }; f' # this is used for supporting colored output on tail command
