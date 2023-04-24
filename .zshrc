@@ -72,5 +72,5 @@ alias ls="lsd"
 alias cat="colorize_cat" # plugin colorize
 alias ccat="command -p cat"
 alias less="colorize_less" # plugin colorize
-alias chead='f(){ colorize_cat "$@" | head; unset -f f; }; f' # this is used for supporting colored output on head command, should be used like `chead FILENAME.c`
+alias chead='f(){ colorize_cat "$@" | sed -n "1,10p" ; unset -f f; }; f' # this is used for supporting colored output on head command, should be used like `chead FILENAME.c`
 alias ctail='f(){ colorize_cat "$@" | tail; unset -f f; }; f' # this is used for supporting colored output on tail command
