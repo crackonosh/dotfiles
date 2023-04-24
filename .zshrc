@@ -8,12 +8,12 @@ then
 	export PATH="/usr/local/Cellar:/usr/local/sbin:$PATH"
 	export PATH="$PATH:/Users/$USER/Library/Python/2.7/bin"
 	export PATH="$PATH:/Users/$USER/.composer/vendor/bin"
-    export EDITOR=$(command -v nvim || command -pv vim || command -pv vi)
+  export EDITOR=$(command -v nvim || command -pv vim || command -pv vi)
 elif [[ $OS == "Linux" ]];
 then
 	# Path to your oh-my-zsh installation.
 	export ZSH="/home/$USER/.oh-my-zsh"
-    export EDITOR=$(command -pv nvim || command -pv vim || command -pv vi)
+  export EDITOR=$(command -pv nvim || command -pv vim || command -pv vi)
 fi
 
 # Set name of the theme to load.
@@ -63,8 +63,9 @@ if [[ $OS == "Darwin" ]];
 then
 	alias vim="vimr"
 	alias freespace="echo \"Free space:\" $(diskutil info / | grep "Free Space" | awk '{print $4 $5}')"
-    alias yabres='launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"'
+  alias yabres='launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"'
 fi
+
 alias gc='git clone'
 alias gcm="git checkout main"
 alias gs="git status"
