@@ -20,6 +20,7 @@ endif
 let g:colors_name="Inanis"
 
 
+
 hi Constant        guifg=#AA66FF               gui=bold
 hi String          guifg=#FFFB00
 hi Character       guifg=#FFFB00
