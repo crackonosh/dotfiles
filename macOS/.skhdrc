@@ -152,3 +152,6 @@ alt - p : yabai -m window --toggle sticky;\
 # change layout of desktop
 ctrl + alt - a : yabai -m space --layout bsp
 ctrl + alt - d : yabai -m space --layout float
+
+# Restart service when layout fuckery occurs
+ctrl + alt + cmd - r : yabai --restart-service

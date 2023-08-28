@@ -61,9 +61,9 @@ fi
 # For a full list of active aliases, run `alias`.
 if [[ $OS == "Darwin" ]];
 then
-	alias vim="vimr"
-	alias freespace="echo \"Free space:\" $(diskutil info / | grep "Free Space" | awk '{print $4 $5}')"
-  alias yabres='launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"'
+    alias vim="vimr"
+    alias freespace="echo \"Free space:\" $(diskutil info / | grep "Free Space" | awk '{print $4 $5}')"
+    alias yabres='yabai --restart-service'
 fi
 
 alias gc='git clone'
