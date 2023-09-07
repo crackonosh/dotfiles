@@ -155,14 +155,89 @@ then
         echo "I use arch, btw (and so should you), 'till then help yourself"
         exit 666
     else
-        echo "\t Glory to Arch!"
+        echo "Glory to Arch!"
     fi
+
+    utils=(
+        zsh
+        fd
+	    bat
+	    wget
+        curl
+        fzf
+        git
+        lazygit
+        make
+        zip
+        unzip
+        unrar
+        cargo
+        gdb
+        lldb
+        btop
+        docker
+        docker-compose
+        docker-buildx
+        tldr
+        which
+    )
+    read -p "Do you wish to install all missing utils? [Y/n]" -n 1 -r
+    if [[ $REPLY == "y" || $REPLY == "Y"  || $REPLY == "" ]]; then
+        for util in "${utils[@]}"
+        do
+            if pacman -Q "$util" &> /dev/null; then
+                echo "Package \"$util\" was found..."
+            else
+                echo "Package \"$util\" is missing, gonna install it..."
+                sudo pacman -S --noconfirm "$util" 
+            fi
+        done
+    else
+        for util in "${utils[@]}"
+        do
+            if ! pacman -Q "$util" &> /dev/null; then
+                read -p "Unable to find \"$util\", do you wish to install it? [Y/n]" -n 1 -r
+                if [[ $REPLY == "Y" || $REPLY == "y" || $REPLY == "" ]]; then
+                    sudo pacman -S --noconfirm "$util"
+                fi
+            fi
+        done
+    fi
+
+    ranger_libs=(
+        atool
+        ffmpegthumbnailer
+        highlight
+        imagemagick
+        libcaca
+        lynx
+        mediainfo
+        odt2txt
+        poppler
+        python-chardet
+        ueberzug
+        gpg-tui
+        xplr
+    )
+
+    for rl in "${ranger_libs[@]}"; do
+        if ! pacman -Q "$rl" &> /dev/null; then
+            read -p "Unable to find ranger preview package \"$rl\", do you wish to install it? [Y/n]" -n 1 -r
+            if [[ $REPLY == "Y" || $REPLY == "y" || $REPLY == "" ]]; then
+                sudo pacman -S --noconfirm "$rl"
+            else
+                echo "Skipping \"$rl\" installation..."
+            fi
+        else
+            echo "Ranger preview package \"$rl\" was already installed..."
+        fi
+    done
 
     ############### NVIM
     if ! command -v nvim &> /dev/null
     then
         echo "Unable to find neovim, will try to install..."
-        sudo pacman -S neovim
+        sudo pacman -S neovim python-pynvim
     else
         echo "Seems like neovim is already installed"
     fi
@@ -190,7 +265,15 @@ then
         echo "Fira code fonts are already installed."
     else
         echo "Didn't find Fira-Code font, will try to install it."
-        sudo pacman -S ttf-fira-code
+        sudo pacman -S ttf-fira-code 
+    fi
+
+    pacman -Q ttf-firacode-nerd &> /dev/null
+    if [[ $? -eq 0 ]]; then
+        echo "Fira code nerd fonts are already installed."
+    else
+        echo "Didn't find Fira-Code nerd font, will try to install it."
+        sudo pacman -S ttf-firacode-nerd 
     fi
 else
     echo "You don't really expect me to help you with that kind of system, do you..?"
